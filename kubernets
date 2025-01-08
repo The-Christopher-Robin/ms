@@ -1,0 +1,69 @@
+4. ubuntu.yaml
+
+apiVersion: v1
+kind: Pod
+metadata:
+name: ubuntu
+namespace: usn
+spec:
+containers:
+- name: ubuntu
+image: ubuntu
+command: ["echo", "AMAN RAJ"]
+
+5. ubuntuenv.yaml
+
+apiVersion: v1
+kind: Pod
+metadata:
+name: ubuntu
+namespace: usn
+spec:
+containers:
+- name: ubuntu
+image: ubuntu
+env:
+- name: GREETING
+value: "Good Morning"
+command: ["echo", "$(GREETING)"]
+
+6. q6.yml
+
+apiVersion: v1
+kind: Pod
+metadata:
+name: testpod
+spec:
+containers:
+- name: c00
+image: ubuntu: latest
+command: ["/bin/bash","-c", "while true; do echo Hello; sleep 10: dane"]
+- name: c01
+image: httpd:latest
+ports:
+- containerPort: 80
+
+
+7a. 
+apiVersion: v1
+kind: Pod
+metadata:
+name: testpod1
+spec:
+containers:
+- name: c02
+image: nginx:latest
+ports:
+- containerPort: 80
+
+7b.
+apiVersion: v1
+kind: Pod
+metadata:
+name: testpod2
+spec:
+containers:
+- name: c03
+image: httpd:latest
+ports:
+- containerPort: 80
